@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Live Demo: https://mern-auth-psi-nine.vercel.app/register
+
 🔐 React Authentication & Protected Dashboard (Mocked)
 
 A frontend authentication project built with Next.js (App Router) that simulates a real-world login flow using mock authentication, token-based route protection, and localStorage.
