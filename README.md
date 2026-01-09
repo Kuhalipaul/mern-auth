@@ -1,6 +1,12 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+🔐 React Authentication & Protected Dashboard (Mocked)
+
+A frontend authentication project built with Next.js (App Router) that simulates a real-world login flow using mock authentication, token-based route protection, and localStorage.
+The project demonstrates clean architecture, predictable state flow, and common frontend best practices.
+
 ## Getting Started
+
 
 First, run the development server:
 
@@ -13,6 +19,107 @@ pnpm dev
 # or
 bun dev
 ```
+📌 Features
+✅ Authentication (Mocked)
+
+Login with Email & Password
+
+Mock authentication logic (no real backend)
+
+Token stored in localStorage
+
+Basic token expiry handling
+
+✅ Protected Routes
+
+Dashboard accessible only after login
+
+Automatic redirect to Login if unauthenticated
+
+Auto logout when token expires
+
+✅ Dashboard
+
+Displays logged-in user data (from localStorage)
+
+Clean, minimal UI
+
+Uses React useState & useEffect
+
+✅ Logout
+
+Clears token & user data
+
+Redirects to Login page
+
+⭐ Bonus Implementations
+
+Axios HTTP Interceptors
+
+Automatically attaches token to requests
+
+Handles unauthorized responses (401)
+
+Environment-based configuration
+
+API base URL managed via .env.local
+
+Token expiry simulation
+
+Mimics real JWT expiry behavior
+
+🛠 Tech Stack
+
+Next.js 13+ (App Router)
+
+React
+
+TypeScript
+
+Tailwind CSS
+
+Axios
+
+localStorage (mock auth)
+
+📂 Project Structure
+
+src/
+├── app/
+│   ├── page.tsx              # Entry redirect logic
+│   ├── login/
+│   │   └── page.tsx          # Login page
+│   ├── register/
+│   │   └── page.tsx          # Register page
+│   └── dashboard/
+│       └── page.tsx          # Protected dashboard
+│
+├── components/
+│   ├── Navbar.tsx
+│   ├── Input.tsx
+│   └── Button.tsx
+│
+├── lib/
+│   ├── auth.ts               # Mock auth logic
+│   ├── token.ts              # Token & expiry handling
+│   └── axios.ts              # Axios instance + interceptors
+│
+└── .env.local
+
+
+🔄 Authentication Flow
+
+User logs in with email & password
+
+App generates a dummy token with expiry
+
+Token & user info stored in localStorage
+
+Dashboard validates token before rendering
+
+On logout or token expiry → user redirected to login
+
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
