@@ -17,18 +17,33 @@ export default function RegisterPage() {
 	};
 
 	return (
-		<div className="max-w-sm mx-auto mt-20 bg-white p-6 rounded">
-			<h2 className="text-xl mb-4">Register</h2>
-			<Input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-			<Input
-				type="password"
-				placeholder="Password"
-				onChange={(e) => setPassword(e.target.value)}
-				className="mt-3"
-			/>
-			<Button onClick={handleRegister} className="mt-4">
-				Register
-			</Button>
+		<div className="min-h-screen flex items-center justify-center bg-gray-100">
+			<div className="w-full max-w-sm bg-white p-6 rounded-lg shadow">
+				<h2 className="text-2xl font-semibold text-center mb-6">Create an account</h2>
+
+				<Input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+
+				<Input
+					type="password"
+					placeholder="Password"
+					onChange={(e) => setPassword(e.target.value)}
+					className="mt-3"
+				/>
+
+				<Button onClick={handleRegister} className="mt-5 w-full" disabled={!email || !password}>
+					Register
+				</Button>
+
+				<p className="text-sm text-center text-gray-600 mt-4">
+					Already have an account?{' '}
+					<span
+						className="text-blue-600 cursor-pointer hover:underline"
+						onClick={() => router.push('/login')}
+					>
+						Login
+					</span>
+				</p>
+			</div>
 		</div>
 	);
 }

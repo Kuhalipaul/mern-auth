@@ -7,15 +7,16 @@ export default function Navbar() {
 
 	const logout = () => {
 		localStorage.removeItem('token');
+		localStorage.removeItem('user');
 		router.push('/login');
 	};
 
 	return (
-		<nav className="flex justify-between p-4 bg-white shadow">
-			<h1 className="font-bold">Dashboard</h1>
-			<button onClick={logout} className="text-red-500">
+		<div className="flex justify-between items-center px-6 py-4 bg-white shadow">
+			<h1 className="text-lg font-semibold">My App</h1>
+			<button onClick={logout} className="text-sm text-red-600 hover:underline">
 				Logout
 			</button>
-		</nav>
+		</div>
 	);
 }

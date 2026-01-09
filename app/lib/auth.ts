@@ -3,13 +3,16 @@ export const registerUser = (email: string, password: string) => {
 	localStorage.setItem('user', JSON.stringify(user));
 };
 
-export const loginUser = (email: string, password: string): boolean => {
-	const stored = localStorage.getItem('user');
-	if (!stored) return false;
+export const loginUser = (email: string, password: string) => {
+	if (email && password) {
+		const tokenData = {
+			token: 'dummy-token',
+			expiresAt: Date.now() + 60 * 60 * 1000,
+		};
 
-	const user = JSON.parse(stored);
-	if (user.email === email && atob(user.password) === password) {
-		localStorage.setItem('token', 'dummy-token');
+		localStorage.setItem('token', JSON.stringify(tokenData));
+		localStorage.setItem('user', JSON.stringify({ email }));
+
 		return true;
 	}
 	return false;
